@@ -1,0 +1,112 @@
+.auth-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 16px;
+  }
+  
+  .auth-modal {
+    background: #ffffff;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 380px;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    color: #2c3e50;
+  }
+  
+  .auth-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #7f8c8d;
+  }
+  
+  .auth-modal h2 {
+    margin: 0 0 4px 0;
+    font-size: 1.4rem;
+    color: #1e4620;
+  }
+  
+  .auth-subtitle {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0 0 18px 0;
+  }
+  
+  .auth-error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+  }
+  
+  .auth-form .form-group {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-form label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .auth-form input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .auth-form input:focus {
+    border-color: #2e7d32;
+  }
+  
+  .auth-submit-btn {
+    width: 100%;
+    padding: 11px;
+    background-color: #2e7d32;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  
+  .auth-submit-btn:hover {
+    background-color: #256628;
+  }
+  
+  .auth-toggle {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: #555;
+  }
+  
+  .auth-toggle button {
+    background: none;
+    border: none;
+    color: #2e7d32;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0 4px;
+  }
