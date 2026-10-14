@@ -1,0 +1,57 @@
+.weather-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #eaf3ec;
+    border-radius: 18px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+  }
+  
+  .weather-icon-wrapper {
+    flex-shrink: 0;
+  }
+  
+  /* Círculo minimalista del sol idéntico al mockup */
+  .sun-circle-outer {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #f9cb60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sun-circle-outer.rainy {
+    background-color: #7ea8be;
+  }
+  
+  .sun-circle-inner {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #fde08d;
+  }
+  
+  .sun-circle-outer.rainy .sun-circle-inner {
+    background-color: #a7c6d9;
+  }
+  
+  .weather-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .weather-title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1b2e20;
+  }
+  
+  .weather-subtitle {
+    margin: 4px 0 0 0;
+    font-size: 0.9rem;
+    color: #5b6e60;
+  }
