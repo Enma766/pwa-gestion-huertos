@@ -2,20 +2,13 @@ import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import './AuthModal.css';
 
-interface AuthModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
+export const AuthModal: React.FC = () => {
   const { login, register } = useAuth();
   const [isRegisterMode, setIsRegisterMode] = useState(false);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
-
-  if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,9 +20,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
         return;
       }
       const success = register(username, email, password);
-      if (success) {
-        onClose();
-      } else {
+      if (!success) {
         setErrorMsg('El correo ya está registrado.');
       }
     } else {
@@ -38,22 +29,21 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
         return;
       }
       const success = login(email, password);
-      if (success) {
-        onClose();
-      } else {
+      if (!success) {
         setErrorMsg('Credenciales incorrectas.');
       }
     }
   };
 
   return (
-    <div className="auth-overlay">
-      <div className="auth-modal">
-        <button className="auth-close-btn" onClick={onClose} aria-label="Cerrar">✕</button>
-        
-        <h2>{isRegisterMode ? 'Crear Cuenta' : 'Iniciar Sesión'}</h2>
+    <div className="auth-page">
+      <div className="auth-card">
+        <div className="auth-brand">🌱</div>
+        <h2>{isRegisterMode ? 'Crear Cuenta' : 'Mi Huerto'}</h2>
         <p className="auth-subtitle">
-          {isRegisterMode ? 'Comienza a organizar tu huerto' : 'Bienvenido de vuelta a tu huerto'}
+          {isRegisterMode
+            ? 'Regístrate para comenzar a gestionar tus cultivos'
+            : 'Inicia sesión para acceder a tu huerto'}
         </p>
 
         {errorMsg && <div className="auth-error">{errorMsg}</div>}
@@ -95,15 +85,25 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           <button type="submit" className="auth-submit-btn">
-            {isRegisterMode ? 'Registrarse' : 'Entrar'}
+            {isRegisterMode ? 'Registrarse' : 'Iniciar Sesión'}
           </button>
         </form>
 
         <div className="auth-toggle">
           {isRegisterMode ? (
-            <span>¿Ya tienes cuenta? <button type="button" onClick={() => setIsRegisterMode(false)}>Inicia sesión</button></span>
+            <span>
+              ¿Ya tienes cuenta?{' '}
+              <button type="button" onClick={() => setIsRegisterMode(false)}>
+                Inicia sesión
+              </button>
+            </span>
           ) : (
-            <span>¿No tienes cuenta? <button type="button" onClick={() => setIsRegisterMode(true)}>Regístrate</button></span>
+            <span>
+              ¿No tienes cuenta?{' '}
+              <button type="button" onClick={() => setIsRegisterMode(true)}>
+                Regístrate
+              </button>
+            </span>
           )}
         </div>
       </div>
