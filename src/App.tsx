@@ -31,8 +31,8 @@ const AppContent: React.FC = () => {
           <p>Sección de Mis Plantas (próximamente)</p>
         )}
 
-        {activeTab === 'calendar' && (
-          <p>Sección de Calendario y Tareas (próximamente)</p>
+        {activeTab === 'wiki' && (
+          <p>Sección Wiki (próximamente)</p>
         )}
 
         {activeTab === 'profile' && (

@@ -1,7 +1,7 @@
 import React from 'react';
 import './BottomNav.css';
 
-export type TabType = 'home' | 'plants' | 'calendar' | 'profile';
+export type TabType = 'home' | 'plants' | 'wiki' | 'profile';
 
 interface BottomNavProps {
   activeTab: TabType;
@@ -48,9 +48,9 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onChangeTab }) 
 
       <button
         type="button"
-        className={`nav-item ${activeTab === 'calendar' ? 'active' : ''}`}
-        onClick={() => onChangeTab('calendar')}
-        aria-label="Calendario y tareas"
+        className={`nav-item ${activeTab === 'wiki' ? 'active' : ''}`}
+        onClick={() => onChangeTab('wiki')}
+        aria-label="Wiki"
       >
         <svg viewBox="0 0 24 24" width="24" height="24" className="nav-icon">
           <rect
