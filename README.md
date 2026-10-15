@@ -9,3 +9,5 @@
 ### Huerto
 
 ## Sistema de seguimiento de la planta ya sembrada
+
+![FuncionalidadSimplificada](src\assets\documentation\diagrama-de-funcion-simplificado.svg)
