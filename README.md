@@ -10,6 +10,6 @@
 
 ## Sistema de seguimiento de la planta ya sembrada
 ---
-## Diagrama de funcionalidad (versión simplificada simplificada)
+## Diagrama de funcionalidad (versión simplificada)
 
 ![FuncionalidadSimplificada](src/assets/documentation/diagrama-de-funcion-simplificado.svg)
